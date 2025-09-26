@@ -1,5 +1,5 @@
-.new-char {
-  background-color: aquamarine;
+.del-char {
+  background-color: red;
   grid-column-start: 1;
   grid-column-end: 2;
   grid-row-start: 1;
