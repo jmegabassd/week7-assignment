@@ -14,3 +14,11 @@ app.listen(PORT, function () {
 app.get("/", function (req, res) {
   res.json({ message: "Welcome to the server. GET comfy" });
 });
+
+app.get("/characters", async function (req, res) {
+  const query =
+    await db.query(`SELECT characters.name, classes.class, races.race, classes.health, classes.stamina, classes.mana, classes.strength, classes.intellect
+FROM characters JOIN classes ON characters.class_id = classes.id JOIN races ON characters.race_id = races.id;`);
+  console.log(query);
+  res.json(query.rows);
+});
