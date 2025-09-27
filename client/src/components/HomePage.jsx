@@ -1,9 +1,10 @@
-import "./NavBar.css";
+import "./HomePage.css";
+import GetChar from "./GetChar";
 
 export default function HomePage() {
   return (
-    <>
-      <div className="home">Home</div>
-    </>
+    <div className="home">
+      <GetChar />
+    </div>
   );
 }

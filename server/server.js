@@ -15,10 +15,15 @@ app.get("/", function (req, res) {
   res.json({ message: "Welcome to the server. GET comfy" });
 });
 
-app.get("/characters", async function (req, res) {
-  const query =
-    await db.query(`SELECT characters.name, classes.class, races.race, classes.health, classes.stamina, classes.mana, classes.strength, classes.intellect
+app.get("/characters", async function (_, res) {
+  try {
+    const query =
+      await db.query(`SELECT characters.name, classes.class, races.race, classes.health, classes.stamina, classes.mana, classes.strength, classes.intellect, races.trait
 FROM characters JOIN classes ON characters.class_id = classes.id JOIN races ON characters.race_id = races.id;`);
-  console.log(query);
-  res.json(query.rows);
+    console.log(query);
+    res.json(query.rows);
+  } catch (error) {
+    console.error("Er, this isn't working!", error);
+    res.status(500).json({ success: false });
+  }
 });
