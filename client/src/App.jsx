@@ -1,5 +1,6 @@
 import "./App.css";
 import NavBar from "./components/NavBar";
+import Header from "./components/Header";
 import HomePage from "./components/HomePage";
 import NewChar from "./components/NewChar";
 import { Routes, Route } from "react-router";
@@ -10,6 +11,7 @@ import NotFound from "./components/NotFound";
 export default function App() {
   return (
     <>
+      <Header />
       <NavBar />
       <Routes>
         <Route path="/" element={<HomePage />} />

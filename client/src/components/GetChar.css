@@ -1,6 +1,6 @@
 .char-container {
   background-color: antiquewhite;
-  height: 250px;
+  height: fit-content;
   width: 300px;
   padding: 10px;
   border-radius: 10px;
