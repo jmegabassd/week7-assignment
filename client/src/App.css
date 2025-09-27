@@ -2,6 +2,7 @@
 
 :root {
   background-color: chocolate;
+  font-family: monospace;
 }
 
 #root {
@@ -9,5 +10,5 @@
   width: 100vw;
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 1fr 150px;
+  grid-template-rows: 1fr 100px;
 }

@@ -4,4 +4,19 @@
   grid-column-end: 2;
   grid-row-start: 2;
   grid-row-end: 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.nav-bar button {
+  width: 80px;
+  height: 40px;
+  border-radius: 5px;
+  font-size: 18px;
+}
+
+.nav-bar button:hover {
+  cursor: pointer;
 }

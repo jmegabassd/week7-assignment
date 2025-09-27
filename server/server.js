@@ -27,3 +27,17 @@ FROM characters JOIN classes ON characters.class_id = classes.id JOIN races ON c
     res.status(500).json({ success: false });
   }
 });
+
+app.post("/create-characters", (req, res) => {
+  const { charName, charRace, charClass } = req.body;
+  try {
+    const query = db.query(
+      `INSERT INTO characters (name, race_id, class_id) VALUES ($1, $2, $3);`,
+      [charName, charRace, charClass]
+    );
+    res.status(200).json({ success: true });
+  } catch (error) {
+    console.error("Error in add-biscuit route", error);
+    res.status(500).json({ success: false });
+  }
+});
