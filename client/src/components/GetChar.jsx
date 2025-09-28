@@ -26,22 +26,22 @@ export default function GetChar() {
       <>
         {charData.map((character, index) => (
           <div className="char-container" key={index}>
-            Name: {character.name} <br />
-            Class: {character.class}
+            <strong>Name:</strong> {character.name} <br />
+            <strong>Class:</strong> {character.class}
             <br />
-            Race: {character.race}
+            <strong>Race:</strong> {character.race}
             <br />
-            Health: {character.health}
+            <strong>Health:</strong> {character.health}
             <br />
-            Stamina: {character.stamina}
+            <strong>Stamina:</strong> {character.stamina}
             <br />
-            Mana: {character.mana}
+            <strong>Mana:</strong> {character.mana}
             <br />
-            Strength: {character.strength}
+            <strong>Strength:</strong> {character.strength}
             <br />
-            Intellect: {character.intellect}
+            <strong>Intellect:</strong> {character.intellect}
             <br />
-            Trait: {character.trait}
+            <strong>Trait:</strong> {character.trait}
           </div>
         ))}
       </>

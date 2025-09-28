@@ -1,7 +1,84 @@
 .new-char {
-  background-color: aquamarine;
   grid-column-start: 1;
   grid-column-end: 2;
   grid-row-start: 2;
   grid-row-end: 3;
+  padding: 20px;
+  border: 2px solid black;
+  border-radius: 5px;
+  font-size: 18px;
+}
+
+.new-char button {
+  width: 80px;
+  height: 40px;
+  border-radius: 5px;
+  font-size: 18px;
+}
+
+.new-char button:hover {
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+}
+
+legend {
+  padding: 10px;
+}
+
+label {
+  font-size: 20px;
+  padding-bottom: 5px;
+  padding-top: 5px;
+}
+
+input {
+  height: 30px;
+  font-weight: bold;
+  padding: 5px;
+}
+select {
+  height: 30px;
+
+  padding: 5px;
+}
+
+option:invalid {
+  background-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.3),
+    rgba(22, 124, 165, 0.76)
+  );
+}
+
+input:invalid:required {
+  background-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.3),
+    rgba(22, 124, 165, 0.76)
+  );
+}
+
+input:valid {
+  background-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.3),
+    rgba(27, 165, 22, 0.76)
+  );
+}
+
+select:invalid {
+  background-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.3),
+    rgba(22, 124, 165, 0.76)
+  );
+}
+
+select:valid {
+  background-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.3),
+    rgba(27, 165, 22, 0.76)
+  );
 }

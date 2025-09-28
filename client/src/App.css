@@ -1,7 +1,6 @@
 @import url("https://cdn.jsdelivr.net/gh/jgthms/minireset.css@master/minireset.min.css");
 
 :root {
-  background-color: chocolate;
   font-family: monospace;
 }
 
@@ -12,4 +11,7 @@
   grid-template-columns: 1fr;
   grid-template-rows: 100px 1fr 100px;
   max-width: 1000px;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
 }

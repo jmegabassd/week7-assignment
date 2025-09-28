@@ -12,7 +12,6 @@ export default function App() {
   return (
     <>
       <Header />
-      <NavBar />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/new" element={<NewChar />} />
@@ -20,6 +19,7 @@ export default function App() {
         <Route path="/delete" element={<DelChar />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
+      <NavBar />
     </>
   );
 }

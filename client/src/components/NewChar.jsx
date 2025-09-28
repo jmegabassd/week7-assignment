@@ -32,7 +32,9 @@ export default function NewChar() {
   return (
     <>
       <div className="new-char">
-        <h1>Create your character</h1>
+        <h1>
+          <strong>Create your character</strong>
+        </h1>
         <form onSubmit={handleSubmit}>
           <fieldset>
             <legend>Character Input</legend>
@@ -42,6 +44,7 @@ export default function NewChar() {
               type="text"
               name="name"
               maxLength="20"
+              placeholder="Enter Character name"
               required
               value={name}
               onChange={handleNameChange}
@@ -56,6 +59,7 @@ export default function NewChar() {
               value={race}
               onChange={handleRaceChange}
             >
+              <br />
               <option value="" disabled>
                 Select one...
               </option>
