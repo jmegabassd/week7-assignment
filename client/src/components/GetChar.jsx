@@ -7,7 +7,9 @@ export default function GetChar() {
   useEffect(() => {
     async function getCharData() {
       try {
-        const response = await fetch("http://localhost:7777/characters");
+        const response = await fetch(
+          "https://week7-assignment-server-jj9z.onrender.com/characters"
+        );
         const data = await response.json();
         setCharData(data);
       } catch (error) {

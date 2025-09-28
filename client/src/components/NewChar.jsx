@@ -31,14 +31,17 @@ export default function NewChar() {
     };
 
     try {
-      const response = await fetch("http://localhost:7777/create-characters", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
+      const response = await fetch(
+        "https://week7-assignment-server-jj9z.onrender.com/create-characters",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
 
-        body: JSON.stringify(characterData),
-      });
+          body: JSON.stringify(characterData),
+        }
+      );
 
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
