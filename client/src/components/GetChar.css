@@ -1,5 +1,10 @@
 .char-container {
-  background-color: antiquewhite;
+  background-image: linear-gradient(
+    to right,
+    rgba(250, 235, 215, 0.3),
+    rgba(250, 235, 215, 0.76)
+  );
+
   height: fit-content;
   width: 300px;
   padding: 10px;

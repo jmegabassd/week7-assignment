@@ -7,6 +7,11 @@
   border: 2px solid black;
   border-radius: 5px;
   font-size: 18px;
+  background-image: linear-gradient(
+    to right,
+    rgba(250, 235, 215, 0.1),
+    rgba(250, 235, 215, 0.5)
+  );
 }
 
 .new-char button {
@@ -14,12 +19,20 @@
   height: 40px;
   border-radius: 5px;
   font-size: 18px;
+  margin: 10px;
 }
 
 .new-char button:hover {
   cursor: pointer;
-  background-color: rgba(0, 0, 0, 0.6);
-  color: white;
+  background-image: linear-gradient(
+    to right,
+    rgba(250, 235, 215, 0.1),
+    rgba(27, 165, 22, 0.5)
+  );
+}
+
+fieldset {
+  margin: 10px;
 }
 
 legend {
@@ -39,46 +52,37 @@ input {
 }
 select {
   height: 30px;
-
   padding: 5px;
 }
 
-option:invalid {
+input:invalid {
   background-image: linear-gradient(
     to right,
-    rgba(0, 0, 0, 0.3),
-    rgba(22, 124, 165, 0.76)
-  );
-}
-
-input:invalid:required {
-  background-image: linear-gradient(
-    to right,
-    rgba(0, 0, 0, 0.3),
-    rgba(22, 124, 165, 0.76)
+    rgba(250, 235, 215, 0.3),
+    rgba(250, 235, 215, 0.76)
   );
 }
 
 input:valid {
   background-image: linear-gradient(
     to right,
-    rgba(0, 0, 0, 0.3),
-    rgba(27, 165, 22, 0.76)
+    rgba(250, 235, 215, 0.1),
+    rgba(27, 165, 22, 0.5)
   );
 }
 
 select:invalid {
   background-image: linear-gradient(
     to right,
-    rgba(0, 0, 0, 0.3),
-    rgba(22, 124, 165, 0.76)
+    rgba(250, 235, 215, 0.3),
+    rgba(250, 235, 215, 0.76)
   );
 }
 
 select:valid {
   background-image: linear-gradient(
     to right,
-    rgba(0, 0, 0, 0.3),
-    rgba(27, 165, 22, 0.76)
+    rgba(250, 235, 215, 0.1),
+    rgba(27, 165, 22, 0.5)
   );
 }

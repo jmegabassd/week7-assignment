@@ -11,7 +11,7 @@ app.listen(PORT, function () {
   console.info(` Server is running in port ${PORT}`);
 });
 
-app.get("/", function (req, res) {
+app.get("/", function (_, res) {
   res.json({ message: "Welcome to the server. GET comfy" });
 });
 
@@ -37,7 +37,7 @@ app.post("/create-characters", (req, res) => {
     );
     res.status(200).json({ success: true });
   } catch (error) {
-    console.error("Error in add-biscuit route", error);
+    console.error("Error in create-characters route", error);
     res.status(500).json({ success: false });
   }
 });

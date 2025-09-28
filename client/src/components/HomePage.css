@@ -12,4 +12,9 @@
   overflow-inline: auto;
   border: 2px solid black;
   border-radius: 5px;
+  background-image: linear-gradient(
+    to right,
+    rgba(250, 235, 215, 0.1),
+    rgba(250, 235, 215, 0.5)
+  );
 }

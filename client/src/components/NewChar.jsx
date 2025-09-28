@@ -2,17 +2,17 @@ import "./NewChar.css";
 import { useState } from "react";
 
 export default function NewChar() {
-  const [name, setName] = useState("");
-  const [race, setRace] = useState("");
+  const [charName, setCharName] = useState("");
+  const [charRace, setCharRace] = useState("");
   const [charClass, setCharClass] = useState("");
 
   function handleNameChange(event) {
-    setName(event.target.value);
+    setCharName(event.target.value);
     console.log(event.target.value);
   }
 
   function handleRaceChange(event) {
-    setRace(event.target.value);
+    setCharRace(event.target.value);
     console.log(event.target.value);
   }
 
@@ -21,13 +21,39 @@ export default function NewChar() {
     console.log(event.target.value);
   }
 
-  function handleSubmit(event) {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    //STEP 4
-    //fetch POST server route
-    //add headers and body
-    console.log(name, race, charClass);
-  }
+
+    const characterData = {
+      charName,
+      charRace,
+      charClass,
+    };
+
+    try {
+      const response = await fetch("http://localhost:7777/create-characters", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+
+        body: JSON.stringify(characterData),
+      });
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
+      alert("Character successfully added");
+
+      setCharName("");
+      setCharRace("");
+      setCharClass("");
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      alert("Failed to add character.");
+    }
+  };
 
   return (
     <>
@@ -38,28 +64,27 @@ export default function NewChar() {
         <form onSubmit={handleSubmit}>
           <fieldset>
             <legend>Character Input</legend>
-            <label htmlFor="name">Name</label>
-            <br />
+            <label htmlFor="name">Name: </label>
+
             <input
               type="text"
               name="name"
               maxLength="20"
               placeholder="Enter Character name"
               required
-              value={name}
+              value={charName}
               onChange={handleNameChange}
             />
-            <br />
-            <label htmlFor="race">Race</label>
-            <br />
+
+            <label htmlFor="race">Race: </label>
+
             <select
               id="race"
               name="race"
               required
-              value={race}
+              value={charRace}
               onChange={handleRaceChange}
             >
-              <br />
               <option value="" disabled>
                 Select one...
               </option>
@@ -68,9 +93,9 @@ export default function NewChar() {
               <option value="3">Elf</option>
               <option value="4">Gnome</option>
             </select>
-            <br />
-            <label htmlFor="class">Class</label>
-            <br />
+
+            <label htmlFor="class">Class: </label>
+
             <select
               id="class"
               name="class"
@@ -87,10 +112,10 @@ export default function NewChar() {
               <option value="4">Barbarian</option>
               <option value="5">Druid</option>
             </select>
-            <br />
+
             <button type="submit">Submit</button>
           </fieldset>
-          <br />
+
           <fieldset>
             <legend>Character Stats</legend>
           </fieldset>
