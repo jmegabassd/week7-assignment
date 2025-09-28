@@ -5,11 +5,10 @@ export default function GetChar() {
   const [charData, setCharData] = useState(null);
 
   useEffect(() => {
+    const charAPI = import.meta.env.VITE_CHAR_API;
     async function getCharData() {
       try {
-        const response = await fetch(
-          "https://week7-assignment-server-jj9z.onrender.com/characters"
-        );
+        const response = await fetch(charAPI);
         const data = await response.json();
         setCharData(data);
       } catch (error) {

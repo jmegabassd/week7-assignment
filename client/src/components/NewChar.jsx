@@ -5,6 +5,7 @@ export default function NewChar() {
   const [charName, setCharName] = useState("");
   const [charRace, setCharRace] = useState("");
   const [charClass, setCharClass] = useState("");
+  const createAPI = import.meta.env.VITE_CREATE_API;
 
   function handleNameChange(event) {
     setCharName(event.target.value);
@@ -31,17 +32,14 @@ export default function NewChar() {
     };
 
     try {
-      const response = await fetch(
-        "https://week7-assignment-server-jj9z.onrender.com/create-characters",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
+      const response = await fetch(createAPI, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
 
-          body: JSON.stringify(characterData),
-        }
-      );
+        body: JSON.stringify(characterData),
+      });
 
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
