@@ -63,8 +63,8 @@ export default function NewChar() {
           <strong>Create your character</strong>
         </h1>
         <form onSubmit={handleSubmit}>
-          <fieldset>
-            <legend>Character Input</legend>
+          <fieldset className="fieldset">
+            <legend className="legend">Character Input</legend>
             <label htmlFor="name">Name: </label>
 
             <input
@@ -117,7 +117,7 @@ export default function NewChar() {
             <button type="submit">Submit</button>
           </fieldset>
 
-          <fieldset>
+          <fieldset className="fieldset">
             <legend>Character Stats</legend>
           </fieldset>
         </form>
